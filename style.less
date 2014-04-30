@@ -1,0 +1,163 @@
+@base: #ffb300;
+@angle: 30;
+
+@h: hue(@base);
+@s: saturation(@base);
+@l: lightness(@base);
+
+@primaryHue: @h;
+@secondaryHue: (360 - @h) + @angle/2;
+@tertiaryHue: (360 - @h) - @angle/2;
+
+@primary: hsl(@primaryHue,@s,@l);
+
+@primary1: darken(desaturate(@primary,40%),3%);
+@primary2: darken(@primary,17%);
+
+@primary3: lighten(@primary,13%);
+@primary4: lighten(@primary,23%);
+
+@secondary: hsl(@secondaryHue,@s,@l);
+
+@secondary1: darken(desaturate(@secondary,40%),3%);
+@secondary2: darken(@secondary,17%);
+
+@secondary3: lighten(@secondary,13%);
+@secondary4: lighten(@secondary,23%);
+
+@tertiary: hsl(@tertiaryHue,@s,@l);
+
+@tertiary1: darken(desaturate(@tertiary,40%),3%);
+@tertiary2: darken(@tertiary,17%);
+
+@tertiary3: lighten(@tertiary,13%);
+@tertiary4: lighten(@tertiary,23%);
+
+
+fieldset {
+    border: 1px solid lightgrey;
+}
+
+label {
+    display: block;
+    position: relative;
+    clear: both;
+}
+
+#inputs {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: 48em;
+    text-align: center;
+
+    legend {
+        display: none;
+    }
+
+    label {
+        display: inline;
+        padding: 0;
+        margin: 0;
+
+        .label {
+            display: none;
+        }
+    }
+
+    input[type=text], input[type=password] {
+        font-size: 125%;
+        box-sizing: border-box;
+        width: 40%;
+        min-width: 12em;
+        max-width: 24em;
+        margin: 0.5em 1%;
+        padding: 0.5em;
+    }
+}
+
+#result {
+    font-size: 200%;
+    margin: 1em auto;
+    padding: 0.25em;
+    min-width: 12em;
+    max-width: 22em;
+    width: 50%;
+    height: 1em;
+    position: relative;
+    display: block;
+    background-color: @primary4;
+    border: 0.1em solid @primary3;
+
+    input {
+        font-family: monospace;
+        font-size: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    input[type=text] {
+        color: transparent;
+    }
+}
+
+#settings {
+    border: 0;
+    padding: 0;
+    margin: 4em 1em 1em 1em;
+
+    legend {
+        display: none;
+    }
+
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 1em 0 0 0;
+    }
+
+    #characters {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    #allowed > label > span.label {
+        display: none;
+    }
+
+    #allowed {
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            li {
+                margin: 0 1em 0 0;
+                padding: 0;
+                list-style-type: none;
+                display: inline-block;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                label {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

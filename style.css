@@ -1,0 +1,108 @@
+fieldset {
+  border: 1px solid lightgrey;
+}
+label {
+  display: block;
+  position: relative;
+  clear: both;
+}
+#inputs {
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  max-width: 48em;
+  text-align: center;
+}
+#inputs legend {
+  display: none;
+}
+#inputs label {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+#inputs label .label {
+  display: none;
+}
+#inputs input[type=text],
+#inputs input[type=password] {
+  font-size: 125%;
+  box-sizing: border-box;
+  width: 40%;
+  min-width: 12em;
+  max-width: 24em;
+  margin: 0.5em 1%;
+  padding: 0.5em;
+}
+#result {
+  font-size: 200%;
+  margin: 1em auto;
+  padding: 0.25em;
+  min-width: 12em;
+  max-width: 22em;
+  width: 50%;
+  height: 1em;
+  position: relative;
+  display: block;
+  background-color: #ffd675;
+  border: 0.1em solid #ffc642;
+}
+#result input {
+  font-family: monospace;
+  font-size: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+#result input[type=text] {
+  color: transparent;
+}
+#settings {
+  border: 0;
+  padding: 0;
+  margin: 4em 1em 1em 1em;
+}
+#settings legend {
+  display: none;
+}
+#settings fieldset {
+  border: 0;
+  margin: 0;
+  padding: 1em 0 0 0;
+}
+#settings #characters {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+#settings #allowed > label > span.label {
+  display: none;
+}
+#settings #allowed ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#settings #allowed ul li {
+  margin: 0 1em 0 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+#settings #allowed ul li:last-child {
+  margin: 0;
+}
+#settings #allowed ul li label {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

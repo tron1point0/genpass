@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Genpass</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="lib/array-utils.js"></script>
+        <script type="text/javascript" src="lib/string-utils.js"></script>
+        <script type="text/javascript" src="lib/crypto-js/pbkdf2.js"></script>
+        <script type="text/javascript" src="lib/crypto-js/sha256.js"></script>
+    </head>
+    <body>
+        <fieldset id="inputs">
+            <legend>Inputs</legend>
+            <label>
+                <span class="label">Salt</span>
+                <input type="text" id="salt" placeholder="Salt" />
+            </label>
+            <label>
+                <span class="label">Secret</span>
+                <input type="password" id="password" placeholder="Secret" />
+            </label>
+        </fieldset>
+        <div id="result">
+            <input type="password" placeholder="Your Password" disabled="disabled" />
+            <input type="text" disabled="disabled" />
+        </div>
+        <fieldset id="settings">
+            <legend>Settings</legend>
+            <label>
+                <span class="label">Length</span>
+                <input type="text" value="16" id="length" class="spinner" />
+            </label>
+            <fieldset id="allowed">
+                <legend>Allowed Characters</legend>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="allowed" value="65..90" checked="checked" />
+                            <span class="label">
+                                Uppercase
+                                <tt>[A-Z]</tt>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="allowed" value="97..122" checked="checked" />
+                            <span class="label">
+                                Lowercase
+                                <tt>[a-z]</tt>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="allowed" value="48..57" checked="checked" />
+                            <span class="label">
+                                Numbers
+                                <tt>[0-9]</tt>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="allowed" value="33..47,58..64,91..96,123..126" />
+                            <span class="label">
+                                Symbols
+                                <tt>[!-/]</tt>
+                                <tt>[:-@]</tt>
+                                <tt>[[-`]</tt>
+                                <tt>[{-~]</tt>
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="allowed" value="32" />
+                            <span class="label">
+                                Space
+                                <tt>[ ]</tt>
+                            </span>
+                        </label>
+                    </li>
+                </ul>
+                <label>
+                    <span class="label">Custom</span>
+                    <input type="text" id="characters" value="" />
+                </label>
+            </fieldset>
+        </fieldset>
+    </body>
+<script type="text/javascript" src="script.js"></script>
+</html>
