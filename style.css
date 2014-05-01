@@ -66,6 +66,12 @@ label {
 #result input[type=text] {
   color: transparent;
 }
+#result input[type=text]::selection {
+  color: transparent;
+}
+#result input[type=text]::-moz-selection {
+  color: transparent;
+}
 #settings {
   border: 0;
   padding: 0;
