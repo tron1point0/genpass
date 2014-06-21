@@ -6,12 +6,15 @@ label {
   position: relative;
   clear: both;
 }
+#container {
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
 #inputs {
   border: 0;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0;
-  max-width: 48em;
+  margin: 0;
+  width: 100%;
   text-align: center;
 }
 #inputs legend {
@@ -29,22 +32,17 @@ label {
 #inputs input[type=password] {
   font-size: 125%;
   box-sizing: border-box;
-  width: 40%;
-  min-width: 12em;
-  max-width: 24em;
-  margin: 0.5em 1%;
   padding: 0.5em;
 }
 #result {
   font-size: 200%;
   margin: 1em auto;
-  padding: 0.25em;
-  min-width: 12em;
-  max-width: 22em;
-  width: 50%;
-  height: 1em;
+  padding: 0;
+  width: 100%;
+  height: 2em;
   position: relative;
   display: block;
+  box-sizing: border-box;
   background-color: #ffd675;
   border: 0.1em solid #ffc642;
 }
@@ -60,7 +58,7 @@ label {
   text-align: center;
   border: 0;
   margin: 0;
-  padding: 0;
+  padding: 0.25em;
   background-color: transparent;
 }
 #result input[type=text] {
@@ -111,4 +109,25 @@ label {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+@media screen and (min-width: 48em) {
+  #container {
+    width: 48em;
+  }
+  #inputs input {
+    width: 47.5%;
+    margin: 0.5em 0;
+  }
+  #inputs input[type=password] {
+    margin-left: 4%;
+  }
+}
+@media screen and (max-width: 47.99em) {
+  #container {
+    width: 100%;
+  }
+  #inputs input {
+    width: 100%;
+    margin: 0.5em 0;
+  }
 }
